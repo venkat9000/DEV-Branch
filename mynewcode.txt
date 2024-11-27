@@ -1,0 +1,10 @@
+Whoa. Did not know that. For real? Without fetching there's no way to diff against the remote branch? You have to have a "local version" of the remote branch? – 
+temporary_user_name
+ CommentedApr 8, 2014 at 19:25
+Because git is a distributed CVS, your local git repository will have it's local branches (master by default). But if you work with one or more remote servers, git will make a local copy of the state of these servers. They may have some of your local branches or different ones. I don't know of any way to make a diff against a remote repo directly... (at least not in git itself). – 
+achedeuzot
+ CommentedApr 8, 2014 at 19:31
+2
+In order to diff against a remote repo, you have to download the state of that repo. Network operations can be slow. Very slow In order to not incur the penalty of a network operation every time you run a diff, git only does the download when explicitly requested. That's what git fetch does. – 
+BJ Homer
+ CommentedApr 8, 2014 at 19:39
